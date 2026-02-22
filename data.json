@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "baseItem": {
+        "name": "White Ruffle Dress",
+        "category": "dress",
+        "image": "images/white-ruffle.jpg"
+      },
+      "variations": [
+        {
+          "id": "v1",
+          "tags": ["romantic", "brunch"],
+          "accessories": ["gold layered jewellery"],
+          "vibe": "Elegant Princess",
+          "description": "Gold stacked jewellery gives a royal and polished feminine vibe."
+        },
+        {
+          "id": "v2",
+          "tags": ["minimal", "evening"],
+          "accessories": ["minimal silver jewellery"],
+          "vibe": "Chill Evening",
+          "description": "Silver accessories tone it down for relaxed evening energy."
+        },
+        {
+          "id": "v3",
+          "tags": ["playful", "casual"],
+          "accessories": ["colorful beads or pearls"],
+          "vibe": "Whimsical Fun",
+          "description": "Beads and pearls make the look playful and youthful."
+        }
+      ]
+    }
+  ]
+}
