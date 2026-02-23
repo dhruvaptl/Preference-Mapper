@@ -3,13 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <title>Preference Mapper</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Preference Mapper</h1>
+  <header>
+    <div class="logo-container">
+      <span class="logo-icon">✦</span>
+      <h1 class="logo">Preference Mapper</h1>
+    </div>
+    <p class="subtitle">Map your mood → Transform your look</p>
 
-  <div id="items-container"></div>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Mode</button>
+  </header>
+
+  <main>
+  <div class="slider-wrapper">
+
+    <!-- PAGE 1 (YOUR EXISTING SYSTEM) -->
+    <section class="page">
+      <div id="items-container"></div>
+
+      <div class="page-nav">
+        <button class="active" onclick="goToPage(0)">1</button>
+        <button onclick="goToPage(1)">2</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2 (NEW ADDITION) -->
+    <section class="page second-page">
+      <div class="base-card">
+        <h2>Classic Plain-Black Shirt</h2>
+        <p class="category">Category: shirt</p>
+        <img src="images/black-shirt.jpg" class="base-image">
+
+        <div class="variation-card">
+  <div class="variation-content">
+    <img src="images/white-pants.jpg" class="accessory-image">
+    <div>
+      <h3>Old Money Aesthetic</h3>
+      <p>White linen pants with black belt & gold buckle for rich vibe.</p>
+    </div>
+  </div>
+</div>
+
+<div class="variation-card">
+  <div class="variation-content">
+    <img src="images/darkblue-denims.jpg" class="accessory-image">
+    <div>
+      <h3>Bold Sassy Vibe</h3>
+      <p>Dark blue denims with brown leather belt for evening casual events.</p>
+    </div>
+  </div>
+</div>
+
+<div class="variation-card">
+  <div class="variation-content">
+    <img src="images/black leather-skirt.jpg" class="accessory-image">
+    <div>
+      <h3>Fierce Party Vibes</h3>
+      <p>Leather skirt paired with gold jewellery for fierce slay vibe.</p>
+    </div>
+  </div>
+</div>
+        
+
+      <div class="page-nav">
+        <button onclick="goToPage(0)">1</button>
+        <button class="active" onclick="goToPage(1)">2</button>
+      </div>
+    </section>
+
+  </div>
+</main>
 
   <script src="script.js"></script>
 </body>
