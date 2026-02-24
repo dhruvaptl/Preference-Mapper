@@ -83,31 +83,43 @@ function goToPage(pageIndex) {
   const activeButtons = document.querySelectorAll(`.page-nav button:nth-child(${pageIndex + 1})`);
   activeButtons.forEach(btn => btn.classList.add('active'));
 }
-// IMAGE MODAL SYSTEM (Stable Mobile Version)
 
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImg");
-const closeBtn = document.querySelector(".close-modal");
+// ================= IMAGE MODAL SYSTEM =================
 
-// Open image
-document.addEventListener("click", function (e) {
-  if (
-    e.target.classList.contains("base-image") ||
-    e.target.classList.contains("accessory-image")
-  ) {
-    modal.style.display = "flex";
-    modalImg.src = e.target.src;
+window.addEventListener("load", function () {
+
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close-modal");
+
+  // Ensure modal starts hidden
+  if (modal) modal.style.display = "none";
+
+  // Open image
+  document.addEventListener("click", function (e) {
+    if (
+      e.target.classList.contains("base-image") ||
+      e.target.classList.contains("accessory-image")
+    ) {
+      modal.style.display = "block";
+      modalImg.src = e.target.src;
+    }
+  });
+
+  // Close on X
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
   }
-});
 
-// Close on X
-closeBtn.addEventListener("click", function () {
-  modal.style.display = "none";
-});
-
-// Close on outside tap
-modal.addEventListener("click", function (e) {
-  if (e.target === modal) {
-    modal.style.display = "none";
+  // Close on outside click
+  if (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
   }
+
 });
