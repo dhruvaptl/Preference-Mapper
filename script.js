@@ -83,12 +83,14 @@ function goToPage(pageIndex) {
   const activeButtons = document.querySelectorAll(`.page-nav button:nth-child(${pageIndex + 1})`);
   activeButtons.forEach(btn => btn.classList.add('active'));
 }
+// IMAGE MODAL SYSTEM (Clean Version)
 
-// IMAGE CLICK TO OPEN MODAL
-document.addEventListener("click", function(e) {
-  if (e.target.classList.contains("base-image") || 
-      e.target.classList.contains("accessory-image")) {
-
+// Open modal when clicking any image
+document.addEventListener("click", function (e) {
+  if (
+    e.target.classList.contains("base-image") ||
+    e.target.classList.contains("accessory-image")
+  ) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
 
@@ -97,14 +99,31 @@ document.addEventListener("click", function(e) {
   }
 });
 
-// CLOSE MODAL
-document.querySelector(".close-modal").onclick = function() {
-  document.getElementById("imageModal").style.display = "none";
-};
-
-window.onclick = function(event) {
+// Close logic
+document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("imageModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
+  const closeBtn = document.querySelector(".close-modal");
+
+  if (modal && closeBtn) {
+
+    // Close on X
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    // Close on outside click
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // Close on ESC
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        modal.style.display = "none";
+      }
+    });
+
   }
-};
+});
