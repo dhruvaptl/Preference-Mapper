@@ -83,47 +83,31 @@ function goToPage(pageIndex) {
   const activeButtons = document.querySelectorAll(`.page-nav button:nth-child(${pageIndex + 1})`);
   activeButtons.forEach(btn => btn.classList.add('active'));
 }
-// IMAGE MODAL SYSTEM (Clean Version)
+// IMAGE MODAL SYSTEM (Stable Mobile Version)
 
-// Open modal when clicking any image
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close-modal");
+
+// Open image
 document.addEventListener("click", function (e) {
   if (
     e.target.classList.contains("base-image") ||
     e.target.classList.contains("accessory-image")
   ) {
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImg");
-
-    modal.style.display = "block";
+    modal.style.display = "flex";
     modalImg.src = e.target.src;
   }
 });
 
-// Close logic
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("imageModal");
-  const closeBtn = document.querySelector(".close-modal");
+// Close on X
+closeBtn.addEventListener("click", function () {
+  modal.style.display = "none";
+});
 
-  if (modal && closeBtn) {
-
-    // Close on X
-    closeBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-    });
-
-    // Close on outside click
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-
-    // Close on ESC
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        modal.style.display = "none";
-      }
-    });
-
+// Close on outside tap
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });
