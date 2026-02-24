@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>Preference Mapper</title>
 
   <!-- Google Font -->
@@ -41,12 +43,13 @@
         <p class="category">Category: shirt</p>
         <img src="images/black-shirt.jpg" class="base-image">
 
-        <div class="variation-card">
+       <div class="variation-card">
   <div class="variation-content">
     <img src="images/white-pants.jpg" class="accessory-image">
     <div>
       <h3>Old Money Aesthetic</h3>
       <p>White linen pants with black belt & gold buckle for rich vibe.</p>
+      <small>Tags: Rich, Classy, Formal</small>
     </div>
   </div>
 </div>
@@ -57,6 +60,7 @@
     <div>
       <h3>Bold Sassy Vibe</h3>
       <p>Dark blue denims with brown leather belt for evening casual events.</p>
+      <small>Tags: Casual, Sassy, Attractive</small>
     </div>
   </div>
 </div>
@@ -67,10 +71,10 @@
     <div>
       <h3>Fierce Party Vibes</h3>
       <p>Leather skirt paired with gold jewellery for fierce slay vibe.</p>
+      <small>Tags: Bold, Hot, Fierce</small>
     </div>
   </div>
-</div>
-        
+</div>        
 
       <div class="page-nav">
         <button onclick="goToPage(0)">1</button>
@@ -82,5 +86,11 @@
 </main>
 
   <script src="script.js"></script>
+
+  <!-- IMAGE MODAL -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
 </body>
 </html>
